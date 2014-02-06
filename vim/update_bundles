@@ -36,7 +36,6 @@ git_bundles = %w{
   git://github.com/vim-scripts/jQuery.git
   git://github.com/Lokaltog/vim-powerline.git
   git://github.com/slim-template/vim-slim.git
-  git://github.com/Valloric/YouCompleteMe.git
   git://github.com/tpope/vim-rbenv.git
 }
 
