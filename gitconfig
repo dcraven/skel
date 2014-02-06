@@ -1,0 +1,39 @@
+[user]
+	name = Dennis Craven
+	email = dcraven@gmail.com
+[color]
+	ui = auto
+	diff = auto
+[alias]
+	co = checkout
+	cdiff = diff --color=always
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	tip = log -1 HEAD
+	top = log --oneline -10 --date=short --pretty=tformat:\"%Cgreen%h %Creset %cn %Cblue[%Creset%cd (%cr)%Cblue]>>%Creset %s\"
+	oneline = log --oneline --date=short --pretty=tformat:\"%Cgreen%h %Creset %cn %Cblue[%Creset%cd (%cr)%Cblue]>>%Creset %s\"
+	st = status
+	grepn = grep --name-only
+        pull = pull --rebase
+        graph = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+        uncommit = reset --soft HEAD~
+[core]
+	editor = vim
+        pager = less -F
+[merge]
+	tool = gvimdiff
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1186x862+682+62
+	file-view-vpane-position = 793
+	history-view-vpane-position = 385
+	main-window-view = HistoryView
+[rerere]
+	enabled = true
+[push]
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[branch]
+	autosetuprebase = always

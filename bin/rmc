@@ -1,0 +1,105 @@
+#!/bin/bash
+##########################################################################
+# Title      :	rmc - count files before removing them
+# Author     :	Heiner Steven <heiner.steven@odn.de>
+# Date	     :	1991-09-15
+# Requires   :	
+# Category   :	File Utilities
+# SCCS-Id.   :	@(#) rmc	1.7 06/03/15
+##########################################################################
+# Description
+#     - rmc is a front end for 'rm'. It counts the files before removing
+#	them and asks for confirmation if the number exceeds a limit.
+#     - rmc should be installed as alias for 'rm', i.e. with
+#	the following line in $HOME/.kshrc (Korn Shell):
+#		alias rm=rmc
+# Bugs
+#    o	should handle file names starting with a dash '-' correctly
+##########################################################################
+
+PN=`basename "$0"`		# Program name (without path)
+VER=1.7
+Limit=2				# Threshold for confirmation
+
+usage () {
+    echo >&2 "$PN - count files before removing them, $VER (stv '91)
+usage: $PN file [file ...]
+
+Count files before removing them. If $Limit or more files would be
+removed, ask for a confirmation."
+    exit 1
+}
+
+msg () { echo >&2 "$PN:" "$@"; }
+fatal () { msg "$@"; exit 1; }
+
+echon () {
+    if [ X"$ECHON" = X ]
+    then
+	# Determine how to "echo" without newline: "echo -n" or "echo ...\c"
+	if [ X`echo -n` = X-n ]
+	then ECHON=echo; NNL="\c"
+	else ECHON="echo -n"; NNL=""
+	fi
+    fi
+    $ECHON "$*$NNL"
+}
+
+[ $# -lt 1 ] && usage
+
+# Remember Options for rm
+Recursive=false
+Force=false
+Args=
+while [ $# -gt 0 ]
+do
+    # Handle "rm -rf", "rm -fr", "rm -rif", ...
+    case "$1" in
+	-*r*)	Recursive=true;;
+    esac
+    case "$1" in
+	-*f*)	Force=true;;
+    esac
+
+    # Pass all other arguments to "rm"
+    case "$1" in
+	-*)	Args="$Args $1";;
+	*)	break ;;			# file name
+    esac
+    shift
+done
+
+[ $# -lt 1 ] && usage
+
+if $Force
+then
+    exec \rm $Args "$@"
+    # NOT REACHED
+fi
+
+if [ $Recursive = false ]
+then n=`ls -d "$@" 2> /dev/null | wc -l 2> /dev/null`
+else n=`find "$@" -print | wc -l`
+fi
+
+if [ $? -ne 0 -o $n -eq 0 ]
+then fatal "no files found"
+elif [ "$n" -lt $Limit ]
+then \rm $Args "$@"
+else
+    ls -dFC "$@" | sed '10{s/^.*$/[...]/;q;}' >&2
+    while :
+    do
+	echon >&2 "$PN: remove" $n "entries (y/n)? "
+	read OK < /dev/tty || break
+	case $OK in
+	    [yY]) # rm -f, because there is no need to ask anymore...
+		    \rm -f $Args "$@"
+		    break ;;
+	    [nN])   msg "nothing removed"
+		    exit 0 ;;
+	    *)	    ;;
+	esac
+    done
+fi
+exit
