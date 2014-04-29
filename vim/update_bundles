@@ -7,7 +7,7 @@ git_bundles = %w{
   git://github.com/dcraven/vim-deserted.git
   git://github.com/vim-scripts/xptemplate.git
   git://github.com/gregsexton/gitv.git
-  git://git.wincent.com/command-t.git
+  git://github.com/wincent/Command-T.git
   git://github.com/elzr/vim-json.git
   git://github.com/jgdavey/vim-blockle.git
   git://github.com/kana/vim-textobj-user.git
@@ -27,7 +27,7 @@ git_bundles = %w{
   git://github.com/tpope/vim-repeat.git
   git://github.com/tpope/vim-surround.git
   git://github.com/tpope/vim-vividchalk.git
-  git://github.com/tsaleh/vim-matchit.git
+  git://github.com/tmhedberg/vim-matchit.git
   git://github.com/tsaleh/vim-shoulda.git
   git://github.com/tsaleh/vim-tmux.git
   git://github.com/vim-ruby/vim-ruby.git
