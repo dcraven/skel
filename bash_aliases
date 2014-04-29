@@ -20,4 +20,4 @@ alias sudo='sudo -p "`echo -e '\''\033[33msudo \033[1;31m%U\033[0;33m password f
 alias rem='remind ~/.reminders'
 alias perf="vim ~/Ubuntu\ One/perf.otl"
 alias minicom="minicom -w -c on"
-alias gvim="mvim -geometry 120x200 "
+alias gvim="gvim -geometry 120x200 "
