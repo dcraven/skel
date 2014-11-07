@@ -29,3 +29,11 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+PLATFORM=${OSTYPE//[0-9.]/}
+if [ $PLATFORM == 'darwin' ]; then
+    FONTS=~/Library/Fonts
+    echo "Installing fonts to $FONTS ..."
+    mkdir -p $FONTS
+    cp $dir/fonts/* $FONTS
+fi
