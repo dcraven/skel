@@ -1,6 +1,6 @@
 "===============================================================================
 "==========  CUSTOMIZATION (vimrc)  ============================================
-" Last Modified: January 15, 2014
+" Last Modified: November 07, 2014
 "===============================================================================
 filetype off
 call pathogen#runtime_append_all_bundles() 
@@ -203,7 +203,7 @@ set foldlevelstart=999
 set foldnestmax=2
 set cmdheight=2
 set wildmenu
-set wildignore=*.bak,*.pyc,*.pyo,*.o,*.e,*~,*.png,*.jpg
+set wildignore+=*.bak,*.pyc,*.pyo,*.o,*.e,*~,*.png,*.jpg,*.swp,*.swo,*.zip
 set printoptions=left:8pc,right:3pc
 
 let javaScript_fold=1
@@ -286,9 +286,8 @@ let g:xptemplate_bundle = 'javascript_jquery'
 let g:xptemplate_brace_complete = '([{'
 let g:xptemplate_vars = "SParg="
 
-" Bring up the Command-T window
-nmap <silent> ,t :CommandT<CR>
-nmap <silent> ,b :CommandTBuffer<CR>
+" Bring up the CtrlP window
+nmap <silent> ,t :CtrlP<CR>
 
 " Settings for vim-indent-guides plugin
 let g:indent_guides_enable_on_vim_startup = 0
