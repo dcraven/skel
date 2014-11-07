@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
 #
+# git://git.wincent.com/command-t.git
 # git://github.com/Shougo/neocomplcache.git
 
 git_bundles = %w{
   git://github.com/dcraven/vim-deserted.git
   git://github.com/vim-scripts/xptemplate.git
   git://github.com/gregsexton/gitv.git
-  git://github.com/wincent/Command-T.git
   git://github.com/elzr/vim-json.git
   git://github.com/jgdavey/vim-blockle.git
   git://github.com/kana/vim-textobj-user.git
