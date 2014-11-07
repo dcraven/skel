@@ -27,7 +27,7 @@ git_bundles = %w{
   git://github.com/tpope/vim-repeat.git
   git://github.com/tpope/vim-surround.git
   git://github.com/tpope/vim-vividchalk.git
-  git://github.com/tmhedberg/vim-matchit.git
+  git://github.com/tmhedberg/matchit.git
   git://github.com/tsaleh/vim-shoulda.git
   git://github.com/tsaleh/vim-tmux.git
   git://github.com/vim-ruby/vim-ruby.git
