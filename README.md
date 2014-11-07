@@ -14,6 +14,28 @@ a MacOS machine, it tries to install fonts to ~/Library/Fonts, otherwise the fon
 ## Installation
     ./install.sh
     
+## Attention MacOS Users
+This configuration assumes you are using GNU coreutils rather than the ones shipped with your machine.
+This means that without the GNU versions things like `ls` will break. To remedy this, install 
+[homebrew](brew.sh) by pasting this in your terminal:
+
+    ruby -e "$(url -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Make a new shell source your `~/.profile` by putting this in your `~/.bash_profile`:
+
+    source ~/.profile
+
+Put the following in your `~/.profile`:
+
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH
+    source ~/.bashrc
+
+Then type:
+
+    brew install coreutils
+
+And now Bob may or may not be your uncle.
+
 ## Warranty
 None.
 
