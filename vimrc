@@ -1,10 +1,53 @@
 "===============================================================================
 "==========  CUSTOMIZATION (vimrc)  ============================================
-" Last Modified: November 07, 2014
+" Last Modified: April 16, 2015
 "===============================================================================
+set nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles() 
-call pathogen#helptags()
+
+" ======================= Begin Vundle Configuration =====================
+" Clone Vundle 
+" $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'dcraven/vim-deserted.git'
+Bundle 'vim-scripts/xptemplate.git'
+Bundle 'gregsexton/gitv.git'
+Bundle 'elzr/vim-json.git'
+Bundle 'jgdavey/vim-blockle.git'
+Bundle 'kana/vim-textobj-user.git'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'pangloss/vim-javascript.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'sickill/vim-pasta.git'
+Bundle 'timcharper/textile.vim.git'
+Bundle 'tomtom/tcomment_vim.git'
+Bundle 'tpope/vim-cucumber.git'
+Bundle 'tpope/vim-endwise.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'tpope/vim-git.git'
+Bundle 'tpope/vim-haml.git'
+Bundle 'tpope/vim-markdown.git'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-repeat.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-vividchalk.git'
+Bundle 'tmhedberg/matchit.git'
+Bundle 'tsaleh/vim-shoulda.git'
+Bundle 'tsaleh/vim-tmux.git'
+Bundle 'vim-ruby/vim-ruby.git'
+Bundle 'vim-scripts/Gist.vim.git'
+Bundle 'vim-scripts/IndexedSearch.git'
+Bundle 'vim-scripts/jQuery.git'
+Bundle 'Lokaltog/vim-powerline.git'
+Bundle 'slim-template/vim-slim.git'
+Bundle 'tpope/vim-rbenv.git'
+Bundle 'bling/vim-airline'
+
+" ======================= End Vundle Configuration =====================
 
 syntax on
 filetype plugin indent on
@@ -180,7 +223,6 @@ set incsearch
 set autoread
 set autowrite
 set nohlsearch
-set nocompatible
 set autoindent
 set laststatus=2
 set scrolloff=3
