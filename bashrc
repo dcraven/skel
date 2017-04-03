@@ -35,14 +35,12 @@ shopt -s cmdhist
 
 PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# MAC: HOMEBREW: Add gnu-tools folder with proper names to $PATH
+PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
 # Add .bin direcory to $PATH if it exists
 if [ -d "$HOME/.bin" ]; then
    PATH="$HOME/.bin:$PATH"
-fi
-
-# Add bin direcory to $PATH if it exists
-if [ -d "$HOME/bin" ]; then
-   PATH="$HOME/bin:$PATH"
 fi
 
 # Define credentials here
