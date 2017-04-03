@@ -1,6 +1,6 @@
 "===============================================================================
 "==========  CUSTOMIZATION (vimrc)  ============================================
-" Last Modified: April 16, 2015
+" Last Modified: April 03, 2017
 "===============================================================================
 set nocompatible
 filetype off
@@ -9,10 +9,10 @@ filetype off
 " Clone Vundle 
 " $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 
-set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 Bundle 'dcraven/vim-deserted.git'
 Bundle 'vim-scripts/xptemplate.git'
 Bundle 'gregsexton/gitv.git'
